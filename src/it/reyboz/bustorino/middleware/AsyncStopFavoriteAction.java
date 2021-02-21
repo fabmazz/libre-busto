@@ -24,6 +24,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 import it.reyboz.bustorino.R;
 import it.reyboz.bustorino.backend.Stop;
+import it.reyboz.bustorino.data.UserDB;
 
 /**
  * Handler to add or remove or toggle a Stop in your favorites

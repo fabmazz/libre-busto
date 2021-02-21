@@ -55,9 +55,9 @@ import it.reyboz.bustorino.backend.GTTJSONFetcher;
 import it.reyboz.bustorino.backend.Palina;
 import it.reyboz.bustorino.backend.Passaggio;
 import it.reyboz.bustorino.backend.Route;
-import it.reyboz.bustorino.middleware.AppDataProvider;
-import it.reyboz.bustorino.middleware.NextGenDB;
-import it.reyboz.bustorino.middleware.UserDB;
+import it.reyboz.bustorino.data.AppDataProvider;
+import it.reyboz.bustorino.data.NextGenDB;
+import it.reyboz.bustorino.data.UserDB;
 
 public class ArrivalsFragment extends ResultListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
 

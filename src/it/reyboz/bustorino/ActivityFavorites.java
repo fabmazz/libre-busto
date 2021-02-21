@@ -24,8 +24,8 @@ import android.widget.*;
 import it.reyboz.bustorino.backend.Stop;
 import it.reyboz.bustorino.adapters.StopAdapter;
 import it.reyboz.bustorino.middleware.AsyncStopFavoriteAction;
-import it.reyboz.bustorino.middleware.StopsDB;
-import it.reyboz.bustorino.middleware.UserDB;
+import it.reyboz.bustorino.data.StopsDB;
+import it.reyboz.bustorino.data.UserDB;
 
 import android.app.AlertDialog;
 import android.content.Context;

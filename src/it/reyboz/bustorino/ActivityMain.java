@@ -49,7 +49,6 @@ import androidx.core.app.NavUtils;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,10 +61,12 @@ import com.google.zxing.integration.android.IntentResult;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import it.reyboz.bustorino.backend.*;
+import it.reyboz.bustorino.data.DBUpdateWorker;
+import it.reyboz.bustorino.data.DatabaseUpdate;
+import it.reyboz.bustorino.data.UserDB;
 import it.reyboz.bustorino.fragments.*;
 import it.reyboz.bustorino.middleware.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -451,6 +452,7 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
      **/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PERMISSION_REQUEST_POSITION:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

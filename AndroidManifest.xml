@@ -100,14 +100,14 @@
         </activity>
 
         <provider
-                android:name=".middleware.AppDataProvider"
+                android:name=".data.AppDataProvider"
                 android:authorities="it.reyboz.bustorino.provider"
                 android:enabled="true"
                 android:exported="false">
         </provider>
 
         <service
-                android:name=".middleware.DatabaseUpdateService"
+                android:name=".data.DatabaseUpdateService"
                 android:exported="false">
         </service>
         <!-- Don't show the additional frame on samsung phones -->

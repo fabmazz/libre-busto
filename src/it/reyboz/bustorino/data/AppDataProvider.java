@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package it.reyboz.bustorino.middleware;
+package it.reyboz.bustorino.data;
 
 import android.content.*;
 import android.database.Cursor;
@@ -26,7 +26,7 @@ import android.util.Log;
 
 import it.reyboz.bustorino.BuildConfig;
 import it.reyboz.bustorino.backend.DBStatusManager;
-import it.reyboz.bustorino.middleware.NextGenDB.Contract.*;
+import it.reyboz.bustorino.data.NextGenDB.Contract.*;
 
 import java.util.List;
 

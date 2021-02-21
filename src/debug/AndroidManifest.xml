@@ -17,7 +17,7 @@
         />
 
         <provider
-                android:name=".middleware.AppDataProvider"
+                android:name=".data.AppDataProvider"
                 android:authorities="it.reyboz.bustorino.debug.provider"
                 android:enabled="true"
                 android:exported="false"

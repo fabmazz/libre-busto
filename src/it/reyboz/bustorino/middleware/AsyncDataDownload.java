@@ -27,8 +27,9 @@ import androidx.annotation.NonNull;
 import android.util.Log;
 
 import it.reyboz.bustorino.backend.*;
+import it.reyboz.bustorino.data.AppDataProvider;
 import it.reyboz.bustorino.fragments.FragmentHelper;
-import it.reyboz.bustorino.middleware.NextGenDB.Contract.*;
+import it.reyboz.bustorino.data.NextGenDB.Contract.*;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

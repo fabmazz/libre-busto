@@ -27,10 +27,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.util.Log;
 import it.reyboz.bustorino.R;
-import it.reyboz.bustorino.adapters.PalinaAdapter;
 import it.reyboz.bustorino.backend.Fetcher;
 import it.reyboz.bustorino.backend.Palina;
 import it.reyboz.bustorino.backend.Stop;
+import it.reyboz.bustorino.data.NextGenDB;
 import it.reyboz.bustorino.middleware.*;
 
 import java.lang.ref.WeakReference;
