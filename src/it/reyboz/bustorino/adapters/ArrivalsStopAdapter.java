@@ -181,9 +181,9 @@ public class ArrivalsStopAdapter extends RecyclerView.Adapter<ArrivalsStopAdapte
 
                 final HashMap<Pair<String,String>, Integer> indexMapIn = getRouteIndexMap(mRoutesPairList);
                 final HashMap<Pair<String,String>, Integer> indexMapExisting = getRouteIndexMap(routesPairList);
-                List<Pair<Stop,Route>> oldList = routesPairList;
+                //List<Pair<Stop,Route>> oldList = routesPairList;
                 routesPairList = mRoutesPairList;
-
+                /*
                 for (Pair<String,String> pair: indexMapIn.keySet()){
                     final Integer posIn = indexMapIn.get(pair);
                     if (posIn == null) continue;
@@ -208,7 +208,7 @@ public class ArrivalsStopAdapter extends RecyclerView.Adapter<ArrivalsStopAdapte
                     //routesPairList.remove(posExisting.intValue());
                     notifyItemRemoved(posExisting);
                 }
-                //notifyDataSetChanged();
+                //*/notifyDataSetChanged();
 
             }
             //remove and join the
