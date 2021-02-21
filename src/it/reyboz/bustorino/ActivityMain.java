@@ -31,6 +31,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
@@ -147,12 +149,15 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         framan = getSupportFragmentManager();
         final SharedPreferences theShPr = getMainSharedPreferences();
         /*
-         * Database Access
+         * UI
          */
         setContentView(R.layout.activity_main);
+        Toolbar defToolbar = findViewById(R.id.that_toolbar);
+        setSupportActionBar(defToolbar);
         busStopSearchByIDEditText = findViewById(R.id.busStopSearchByIDEditText);
         busStopSearchByNameEditText = findViewById(R.id.busStopSearchByNameEditText);
         progressBar = findViewById(R.id.progressBar);
@@ -319,10 +324,9 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
 
     }
 
-    /**
+    /*
      * Reload bus stop timetable when it's fulled resumed from background.
-     */
-    /**
+
      * @Override protected void onPostResume() {
      * super.onPostResume();
      * Log.d("ActivityMain", "onPostResume fired. Last successfully bus stop ID: " + fh.getLastSuccessfullySearchedBusStop());
@@ -359,6 +363,9 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
         //TODO: check if current LiveData-bound observer works
         if (pendingNearbyStopsRequest)
             theHandler.post(new NearbyStopsRequester());
+        ActionBar bar = getSupportActionBar();
+        if(bar!=null) bar.show();
+        else Log.w(DEBUG_TAG, "ACTION BAR IS NULL");
     }
 
     @Override

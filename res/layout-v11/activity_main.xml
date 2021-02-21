@@ -1,10 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/mainActivityLayout"
+    android:orientation="vertical"
+
     tools:context="it.reyboz.bustorino.ActivityMain">
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/that_toolbar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
     <ImageButton
         android:id="@+id/QRButton"
@@ -160,4 +178,5 @@
             elevation="15dp"
 
     />
-</RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
