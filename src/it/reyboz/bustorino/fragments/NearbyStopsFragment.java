@@ -425,7 +425,7 @@ public class NearbyStopsFragment extends Fragment implements LoaderManager.Loade
             arrivalsStopAdapter.setRoutesPairListAndPosition(routesPairList,lastReceivedLocation);
         }
 
-        arrivalsStopAdapter.notifyDataSetChanged();
+        //arrivalsStopAdapter.notifyDataSetChanged();
 
         showRecyclerHidingLoadMessage();
     }
