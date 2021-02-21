@@ -7,7 +7,14 @@
 
     <application
         tools:node="merge"
+        android:label="@string/app_name_debug"
+        tools:replace="android:label"
         >
+        <activity
+                android:name=".ActivityMain"
+                android:label="@string/app_name_debug"
+                tools:replace="android:label"
+        />
 
         <provider
                 android:name=".middleware.AppDataProvider"

@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name" translatable="false">BusTO</string>
+    <string name="app_name_debug" translatable="false">BusTO Debug</string>
     <string name="app_description">You\'re using the latest in technology when it comes to respecting your privacy.
     </string>
     <string name="search">Search</string>
