@@ -99,6 +99,10 @@
                 android:value=".ActivityMain"/>
         </activity>
 
+        <activity android:name=".ActivityPrincipal"
+            android:label="Principal" >
+        </activity>
+
         <provider
                 android:name=".data.AppDataProvider"
                 android:authorities="it.reyboz.bustorino.provider"

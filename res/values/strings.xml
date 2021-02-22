@@ -150,4 +150,9 @@
     <string name="message_crash">The application has crashed. If you want, you can send the send the report via email to the developers by pressing \"OK\".
         \n Note that sensitive information may be contained in the report, and if so, it will be only used for diagnostic purposes by the developers, and never published.</string>
     <string name="acra_email_message">The application crashed and the crash report is in the attachments. Please describe what you were doing before the crash: \n</string>
+    <string name="nav_arrivals_text">Arrivals</string>
+    <string name="nav_map_text">Map</string>
+    <string name="nav_favorites_text">Favorites</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>

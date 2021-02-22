@@ -50,4 +50,7 @@
         android:orderInCategory="4"
         android:title="@string/action_help"
         android:visible="true" />
+    <item
+        android:id="@+id/action_experiments"
+        android:title="Experiments"/>
 </menu>

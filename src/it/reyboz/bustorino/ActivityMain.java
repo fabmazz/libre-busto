@@ -434,6 +434,9 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
             case R.id.action_settings:
                 Log.d("MAINBusTO", "Pressed button preferences");
                 startActivity(new Intent(ActivityMain.this, ActivitySettings.class));
+                return true;
+            case R.id.action_experiments:
+                startActivity(new Intent(this, ActivityPrincipal.class));
         }
         return super.onOptionsItemSelected(item);
     }
