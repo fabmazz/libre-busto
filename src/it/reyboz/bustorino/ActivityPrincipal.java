@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -46,11 +47,8 @@ public class ActivityPrincipal extends GeneralActivity {
 
     }
     private ActionBarDrawerToggle setupDrawerToggle(Toolbar toolbar) {
-
         // NOTE: Make sure you pass in a valid toolbar reference.  ActionBarDrawToggle() does not require it
-
         // and will not render the hamburger icon without it.
-
         return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
 
     }
@@ -89,6 +87,13 @@ public class ActivityPrincipal extends GeneralActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        switch (item.getItemId()){
+            case android.R.id.home:
+                mDrawer.openDrawer(GravityCompat.START);
+                return true;
+
+        }
+
         if (drawerToggle.onOptionsItemSelected(item)) {
 
             return true;
@@ -96,5 +101,13 @@ public class ActivityPrincipal extends GeneralActivity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mDrawer.isDrawerOpen(GravityCompat.START))
+            mDrawer.closeDrawer(GravityCompat.START);
+        else
+            super.onBackPressed();
     }
 }
