@@ -32,7 +32,12 @@
         android:layout_gravity="start"
         android:background="?attr/colorPrimaryDark"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:insetForeground="@color/grey_100"
+        app:headerLayout="@layout/nav_header"
+        app:insetForeground="@color/teal_200"
+        app:itemIconTint="@color/teal_200"
+        app:itemTextAppearance="?android:attr/textAppearanceMedium"
+        app:itemTextColor="@android:color/white"
+        android:fitsSystemWindows="true"
         app:menu="@menu/drawer_main" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

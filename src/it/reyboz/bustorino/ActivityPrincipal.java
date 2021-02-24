@@ -3,6 +3,7 @@ package it.reyboz.bustorino;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class ActivityPrincipal extends GeneralActivity {
     private DrawerLayout mDrawer;
     private NavigationView mNavView;
     private ActionBarDrawerToggle drawerToggle;
+    private final static String DEBUG_TAG="BusTO Act Principal";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,8 +31,9 @@ public class ActivityPrincipal extends GeneralActivity {
 
         Toolbar mToolbar = findViewById(R.id.default_toolbar);
         setSupportActionBar(mToolbar);
-
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar()!=null)
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        else Log.w(DEBUG_TAG, "NO ACTION BAR");
 
 
         mDrawer = findViewById(R.id.drawer_layout);
@@ -40,6 +43,8 @@ public class ActivityPrincipal extends GeneralActivity {
         drawerToggle.setDrawerIndicatorEnabled(true);
 
         drawerToggle.syncState();
+        mDrawer.addDrawerListener(drawerToggle);
+
         mNavView = findViewById(R.id.nvView);
 
         setupDrawerContent(mNavView);
@@ -57,6 +62,7 @@ public class ActivityPrincipal extends GeneralActivity {
                 menuItem -> {
 
                     //selectDrawerItem(menuItem);
+                    Log.d(DEBUG_TAG, "pressed item "+menuItem.toString());
 
                     return true;
 
@@ -87,10 +93,17 @@ public class ActivityPrincipal extends GeneralActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        int[] cases = {R.id.nav_arrivals, R.id.nav_favorites_item};
+
         switch (item.getItemId()){
             case android.R.id.home:
                 mDrawer.openDrawer(GravityCompat.START);
                 return true;
+
+            case R.id.nav_arrivals:
+                //do something
+                break;
+            default:
 
         }
 

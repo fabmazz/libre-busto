@@ -11,11 +11,12 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
 
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/that_toolbar"
+        android:fitsSystemWindows="true"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 
@@ -54,7 +55,8 @@
         android:imeOptions="actionSearch"
         android:inputType="number"
         android:selectAllOnFocus="true"
-        android:singleLine="true">
+        android:singleLine="true"
+        >
 
         <requestFocus />
     </EditText>
