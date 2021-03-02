@@ -43,7 +43,9 @@ public class FragmentHelper {
     GeneralActivity act;
     private Stop lastSuccessfullySearchedBusStop;
     //support for multiple frames
-    private int  primaryFrameLayout,secondaryFrameLayout, swipeRefID;
+    private final int secondaryFrameLayout;
+    private final int swipeRefID;
+    private final int primaryFrameLayout;
     public static final int NO_FRAME = -3;
     private WeakReference<AsyncDataDownload> lastTaskRef;
     private NextGenDB newDBHelper;
@@ -94,8 +96,8 @@ public class FragmentHelper {
 
         FragmentManager fm = act.getSupportFragmentManager();
 
-        if(fm.findFragmentById(R.id.resultFrame) instanceof ArrivalsFragment) {
-            arrivalsFragment = (ArrivalsFragment) fm.findFragmentById(R.id.resultFrame);
+        if(fm.findFragmentById(primaryFrameLayout) instanceof ArrivalsFragment) {
+            arrivalsFragment = (ArrivalsFragment) fm.findFragmentById(primaryFrameLayout);
             sameFragment = arrivalsFragment.isFragmentForTheSameStop(p);
         } else
             sameFragment = false;
@@ -115,7 +117,7 @@ public class FragmentHelper {
             attachFragmentToContainer(fm,arrivalsFragment,true,ResultListFragment.getFragmentTag(p));
         } else {
             Log.d("BusTO", "Same bus stop, accessing existing fragment");
-            arrivalsFragment = (ArrivalsFragment) fm.findFragmentById(R.id.resultFrame);
+            arrivalsFragment = (ArrivalsFragment) fm.findFragmentById(primaryFrameLayout);
         }
         // DO NOT CALL `setListAdapter` ever on arrivals fragment
         arrivalsFragment.updateFragmentData(p);
