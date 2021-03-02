@@ -226,7 +226,7 @@ public class ResultListFragment extends Fragment{
     @Override
     public void onPause() {
         if (adapterKind.equals(FragmentKind.ARRIVALS)) {
-            SwipeRefreshLayout reflay = (SwipeRefreshLayout) getActivity().findViewById(R.id.listRefreshLayout);
+            SwipeRefreshLayout reflay = getActivity().findViewById(R.id.listRefreshLayout);
             reflay.setEnabled(false);
             Log.d("BusTO Fragment " + this.getTag(), "RefreshLayout disabled");
         }
