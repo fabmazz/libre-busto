@@ -75,7 +75,7 @@ public class ArrivalsFragment extends ResultListFragment implements LoaderManage
     private boolean justCreated = false;
     private Palina lastUpdatedPalina = null;
     private boolean needUpdateOnAttach = false;
-    private boolean requestedNewArrivalTimes = false;
+    private boolean fetchersChangeRequestPending = false;
 
     //Views
     protected ImageButton addToFavorites;
@@ -139,11 +139,13 @@ public class ArrivalsFragment extends ResultListFragment implements LoaderManage
         resultsListView = (ListView) root.findViewById(R.id.resultsListView);
         timesSourceTextView = (TextView) root.findViewById(R.id.timesSourceTextView);
         timesSourceTextView.setOnLongClickListener(view -> {
-            if(!requestedNewArrivalTimes){
+            if(!fetchersChangeRequestPending){
                 rotateFetchers();
+                //Show we are changing provider
                 timesSourceTextView.setText(R.string.arrival_source_changing);
+                //request new arrival times
                 mListener.createFragmentForStop(stopID);
-                requestedNewArrivalTimes = true;
+                fetchersChangeRequestPending = true;
                 return true;
             }
             return false;
@@ -290,10 +292,18 @@ public class ArrivalsFragment extends ResultListFragment implements LoaderManage
             default:
                 throw new IllegalStateException("Unexpected value: " + source);
         }
+        int count = 0;
+        while (source != fetchers.get(0).getSourceForFetcher() && count < 100){
+            //we need to update the fetcher that is requested
+            rotateFetchers();
+            count++;
+        }
+        if (count>10)
+            Log.w(DEBUG_TAG, "Tried to update the source fetcher but it didn't work");
         final String base_message = getString(R.string.times_source_fmt, source_txt);
         timesSourceTextView.setVisibility(View.VISIBLE);
         timesSourceTextView.setText(base_message);
-        requestedNewArrivalTimes = false;
+        fetchersChangeRequestPending = false;
     }
 
     @Override

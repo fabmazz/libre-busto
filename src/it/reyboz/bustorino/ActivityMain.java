@@ -516,7 +516,7 @@ public class ActivityMain extends GeneralActivity implements FragmentListener {
             toggleSpinner(false);
         } else  if (framan.findFragmentById(R.id.resultFrame) instanceof ArrivalsFragment) {
             ArrivalsFragment fragment = (ArrivalsFragment) framan.findFragmentById(R.id.resultFrame);
-            if (fragment.getStopID() != null && fragment.getStopID().equals(ID)){
+            if (fragment !=null && fragment.getStopID() != null && fragment.getStopID().equals(ID)){
                 // Run with previous fetchers
                 //fragment.getCurrentFetchers().toArray()
                 new AsyncDataDownload(fh,fragment.getCurrentFetchersAsArray()).execute(ID);
